@@ -1,4 +1,6 @@
-class Index extends React.Component {
+import React from 'react'
+
+export default class Ship extends React.Component {
   static propTypes = {
     test: React.PropTypes.string
   }

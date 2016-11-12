@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-  def main
+  def index
+    @home_props = { test: 'Hello' }
   end
 end
