@@ -13,4 +13,8 @@ class HomeController < ApplicationController
     @index_props = { user: current_user }
     redirect_to root_path unless session[:user_id]
   end
+
+  def profile
+
+  end
 end

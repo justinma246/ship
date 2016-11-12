@@ -20,6 +20,15 @@ export default class IndexPage extends React.Component {
           <div>
             <img src={user.picture}/>
           </div>
+          <div>
+            <a href="dock">DOCK</a>
+          </div>
+          <div>
+            <a href="profile">EDIT PROFILE</a>
+          </div>
+          <div>
+            <a href="chat">CHAT</a>
+          </div>
           <a href="signout">Sign out</a>
         </div>
       </div>
