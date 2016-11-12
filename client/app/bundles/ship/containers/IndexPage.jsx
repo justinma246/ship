@@ -1,5 +1,5 @@
 import React from 'react'
-
+import 'styles/HomeStyles.styl'
 
 export default class IndexPage extends React.Component {
   static propTypes = {
