@@ -18,6 +18,7 @@ const config = {
   },
 
   resolve: {
+    root: [path.resolve('./app/assets'), path.resolve('./app/bundles/ship')],
     extensions: ['', '.js', '.jsx'],
     alias: {
       react: path.resolve('./node_modules/react'),
@@ -41,6 +42,10 @@ const config = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader',
       },
     ],
   },
