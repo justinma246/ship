@@ -32,8 +32,13 @@ User Model:
  - ships:integer (number of successful ships)
  - last_active:DateTime
 
-User Controller:
- - from_omniauth => checks if user is already in database. If in database, log in to that user. Else, create new user.
+User Controller: (profile page?)
+ - has 3 buttons -> start shipping, profile, chat
+ - leads to profile page
+
+Chat Controller:
+ - redirected when clicking chat
+ - shows facebook messenger style chat
 
 Shipping Model:
  - user1_id:integer (use uid of user model to get all information
@@ -41,7 +46,7 @@ Shipping Model:
  - judge_id:integer (current user)
  - pass_count:integer (count used to compare to threshhold)
 
-Shipping Controller: (not done)
+Shipping Controller: (displays the ship page)
  - method that gets all information of both people and judge?
  - method that increments pass_count on click of button (or in erb file)
  - VIEW that displays both profiles + buttons (pass / fail)
@@ -52,8 +57,6 @@ Sail Model:
  - user2_id:integer
  - pass:boolean
 
-Sail Controller:
- - METHODS? (probably do not need any)
 
 # DEV STUFF
 
