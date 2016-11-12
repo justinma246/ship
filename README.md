@@ -57,6 +57,12 @@ Sail Model:
  - user2_id:integer
  - pass:boolean
 
+# VIEWS
+ - Landing Page => root :: views/home/login.html.erb
+ - Home Page => /home#_=_ :: views/home/index.html.erb
+ - Dock => /dock :: views/dock/index.html.erb
+ - Profile => /profile :: views/home/profile.html.erb
+ - Chat => /chat :: views/chat/index.html.erb
 
 # DEV STUFF
 
