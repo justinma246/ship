@@ -17,6 +17,6 @@ class HomeController < ApplicationController
   end
 
   def profile
-
+    @profile_props = { user: current_user }
   end
 end
