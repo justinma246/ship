@@ -1,6 +1,10 @@
 class User < Sequel::Model
   def self.from_omniauth(auth)
-    user = User.first(auth.slice(:provider, :uid))
+    query = {
+      provider: auth[:provider],
+      uid: auth[:uid]
+    }
+    user = User.first(query)
     values = {
       provider: auth.provider,
       uid: auth.uid,
