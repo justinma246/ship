@@ -1,5 +1,12 @@
 Sequel.migration do
   change do
+    create_table(:sails) do
+      primary_key :id
+      column :user1_id, "integer"
+      column :user2_id, "integer"
+      column :pass, "Boolean"
+    end
+    
     create_table(:schema_migrations) do
       column :filename, "varchar(255)", :null=>false
       
@@ -36,5 +43,6 @@ end
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112103557_add_columns_to_users.rb')"
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112105001_create_shippings.rb')"
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112105343_add_last_access_to_users.rb')"
+self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112110716_create_sails.rb')"
                 end
               end

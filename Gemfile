@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'sequel-rails'
 gem 'omniauth-facebook', '~> 1.4.0'
 gem 'react_on_rails'
+gem 'annotate-sequel'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
