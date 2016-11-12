@@ -45,3 +45,14 @@ Sails
  - Shippee 2
  - Sailed/Nah
 
+# DEV STUFF
+
+Run `bundle install && npm install`
+
+To run the server: `foreman start -f Procfile.dev`
+Visit site at: `localhost:3000`
+
+All client front-end files are under `client/app/bundles/ship`
+Components should go under `client/app/bundles/ship/components`
+
+ - 
