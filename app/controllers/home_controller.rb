@@ -6,6 +6,8 @@ class HomeController < ApplicationController
   end
 
   def login
+    puts "HELLO"
+    puts session[:user_id]
     redirect_to home_index_path if session[:user_id]
   end
 
