@@ -33,7 +33,7 @@ class User < Sequel::Model
       oauth_expires_at: Time.at(auth.credentials.expires_at),
     }
     if user
-      user = user.update(values)
+      user.update(values)
     else
       user = User.create(values)
     end
@@ -45,8 +45,7 @@ class User < Sequel::Model
       picture: @facebook.get_object("me?fields=picture.height(800)")["picture"]["data"]["url"]
     }
     puts values[:picture]
-    #puts values
-    user = user.update(values)
+    user.update(values)
     user
   end
 
