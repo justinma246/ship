@@ -6,6 +6,14 @@ Sequel.migration do
       primary_key [:filename]
     end
     
+    create_table(:shippings) do
+      primary_key :id
+      column :user1_id, "integer"
+      column :user2_id, "integer"
+      column :judge_id, "integer"
+      column :pass_count, "integer"
+    end
+    
     create_table(:users) do
       primary_key :id
       column :provider, "varchar(255)"
@@ -13,11 +21,20 @@ Sequel.migration do
       column :name, "varchar(255)"
       column :oauth_token, "varchar(255)"
       column :oauth_expires_at, "timestamp"
+      column :age, "integer"
+      column :gender, "varchar(255)"
+      column :interested_in, "varchar(255)"
+      column :bio, "varchar(255)"
+      column :ships, "integer"
+      column :last_active, "timestamp"
     end
   end
 end
-Sequel.migration do
-  change do
-    self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112080434_create_users.rb')"
-  end
-end
+              Sequel.migration do
+                change do
+                  self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112080434_create_users.rb')"
+self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112103557_add_columns_to_users.rb')"
+self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112105001_create_shippings.rb')"
+self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112105343_add_last_access_to_users.rb')"
+                end
+              end

@@ -1,49 +1,59 @@
-README
+# Ship ~ A Dating App
 
-ship
+# STUFF I THOUGHT OF THAT WE NEED TO DO
+ - how does the shipping model know if a user has already seen that shipping pair?
+ - how does the sail model keep track of the list of people that have shipped that pair? (for achievements / awards)
+ - mainly the interaction between user -> shipping and user -> sail, how will we keep track of it? (PROBABLY CAN THINK OF IN MORNING I AM SLEEPY)
 
-Ship 2 other people
+# GENERAL
+Ship is a dating app where you can "ship" 2 other people based on their presented profile. Connected to social media (Facebook), you can judge matchmake others based on their pictures, basic information, interests, and more!  
 
-Connect with social media
+For each scenario, the shipper will be given the option to either ship or pass on the coupling. Being active in shipping others places the shipper into the pool of bachelor and bachelorette's (if wanted). 
 
-Choice to “ship” or “nah” - tinder style
+After enough ships from users (deemed on a personal ship threshold made to reduce spam shipping and raise standards), the couple will then be matched up, and are able to chat.
 
-Ship others to remain visible for other people to ship you
+Potential matches are based on location, gender, profile similarity ratings, and more! In addition to all of this, achievements can be unlocked based on things such as the number of successful ships they voted on and the number of successful ships they were a part of.
 
-Chat with other people when ships have sailed
+Get shipping!
 
-Set your own ship threshold (how many ships until match created - opens up chat - only show when the higher ship threshold between the two is reached -  purpose of this is to reduce spam shipping and raise standards) 
+# MODELS / CONTROLLERS
 
-Potential matches based on:
- - Location
- - Gender
- - Profile similarity ratings (don’t focus too much on this)
- - Hidden preferences(race)
-Achievements (just pull whether they meet the req
- -  # of Successful ships they voted on
- -  # of successful ships they were a part of
+User Model:
+ - id:integer
+ - provider:string
+ - uid:integer
+ - name:string
+ - oauth_token:string
+ - oauth_expires_at:DateTime
+ - age:integer
+ - gender:string
+ - interested_in:string (male or female)
+ - bio:string (describing self)
+ - ships:integer (number of successful ships)
+ - last_active:DateTime
 
-Models:
+User Controller:
+ - from_omniauth => checks if user is already in database. If in database, log in to that user. Else, create new user.
 
-Users
- - Name
- - Age
- - Gender
- - Interested In (men, women, etc.)
- - Bio
- - # of successful ships they have sailed
- - Pull stuff from facebook?
+Shipping Model:
+ - user1_id:integer (use uid of user model to get all information
+ - user2_id:integer  necessary for both parties)
+ - judge_id:integer (current user)
+ - pass_count:integer (count used to compare to threshhold)
 
-Ships
- - Shippee 1
- - Shippee 2
- - Shipper
- - Pass/Nah
+Shipping Controller: (not done)
+ - method that gets all information of both people and judge?
+ - method that increments pass_count on click of button (or in erb file)
+ - VIEW that displays both profiles + buttons (pass / fail)
+    -> possible success screen so the shipper can know if his ship resulted in a successful ship
 
-Sails
- - Shippee 1
- - Shippee 2
- - Sailed/Nah
+Sail Model:
+ - user1_id:integer
+ - user2_id:integer
+ - pass:boolean
+
+Sail Controller:
+ - METHODS? (probably do not need any)
 
 # DEV STUFF
 
@@ -54,5 +64,3 @@ Visit site at: `localhost:3000`
 
 All client front-end files are under `client/app/bundles/ship`
 Components should go under `client/app/bundles/ship/components`
-
- - 
