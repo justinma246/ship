@@ -6,11 +6,11 @@ class HomeController < ApplicationController
   end
 
   def login
-    redirect_to '/home#index' if session[:user_id]
+    redirect_to home_index_path if session[:user_id]
   end
 
   def index
     @index_props = { user: current_user }
-    redirect_to '/home#login' unless session[:user_id]
+    redirect_to root_path unless session[:user_id]
   end
 end
