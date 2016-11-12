@@ -35,7 +35,21 @@ class User < Sequel::Model
     if user
       user.update(values)
     else
-      User.create(values)
+      user = User.create(values)
     end
+    @facebook = user.facebook
+    puts "HELELLELEEOEOEOO"
+    puts @facebook
+    
+    values = {
+      picture: @facebook.get_object("me?fields=picture.height(800)")["picture"]["data"]["url"]
+    }
+    puts values[:picture]
+    user.update(values)
+    user
+  end
+
+  def facebook
+    @facebook = Koala::Facebook::API.new(oauth_token)
   end
 end

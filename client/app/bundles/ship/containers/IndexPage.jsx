@@ -17,6 +17,9 @@ export default class IndexPage extends React.Component {
           <div>
             Current User: {user.name}
           </div>
+          <div>
+            <img src={user.picture}/>
+          </div>
           <a href="signout">Sign out</a>
         </div>
       </div>
