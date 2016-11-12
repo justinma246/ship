@@ -34,6 +34,7 @@ Sequel.migration do
       column :bio, "varchar(255)"
       column :ships, "integer"
       column :last_active, "timestamp"
+      column :picture, "varchar(255)"
     end
   end
 end
@@ -44,5 +45,6 @@ self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112103557_ad
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112105001_create_shippings.rb')"
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112105343_add_last_access_to_users.rb')"
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112110716_create_sails.rb')"
+self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112190703_add_picture_to_users.rb')"
                 end
               end

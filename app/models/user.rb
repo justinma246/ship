@@ -15,6 +15,7 @@
 # | bio              | string    | varchar(255) |    -    |   Y   |  N  |  N  |
 # | ships            | integer   | integer      |    -    |   Y   |  N  |  N  |
 # | last_active      | datetime  | timestamp    |    -    |   Y   |  N  |  N  |
+# | picture          | string    | varchar(255) |    -    |   Y   |  N  |  N  |
 # +------------------+-----------+--------------+---------+-------+-----+-----+
 
 class User < Sequel::Model
