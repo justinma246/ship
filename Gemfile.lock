@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:igrigorik/em-synchrony.git
+  remote: https://github.com/igrigorik/em-synchrony.git
   revision: 8554ced1a8ff82852347a0c1407886e2a66935ae
   specs:
     em-synchrony (1.0.5)

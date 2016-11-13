@@ -11,8 +11,8 @@ export default class IndexPage extends React.Component {
     let user = this.props.user
 
     return (
-      <div className="wrapper">
-        <div>
+      <div className="wrapperThing">
+        <div className="profile">
           <div>
             <img id="profile-img" src={user.picture}/>
           </div>
