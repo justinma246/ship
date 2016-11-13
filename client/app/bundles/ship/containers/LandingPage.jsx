@@ -13,7 +13,7 @@ export default class LandingPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="page">
         <div className="ship">ship.</div>
         <div className="signUp">
         <img className="logo" src='assets/ship-white-trans.png'/>

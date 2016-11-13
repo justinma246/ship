@@ -2,30 +2,15 @@
 <html>
   <head>
     <title>Ship</title>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <%= react_component("ShipApp") %>
+    <%= render 'layouts/header' unless @login %>
   </head>
-
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <img alt="Brand" src="assets/ship-white-trans.png">
-          </a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a id="navlink" href="dock" style="color:white">dock</a></li>
-          <li><a id="navlink" href="home" style="color:white">home</a></li>
-          <li><a id="navlink" href="chat" style="color:white">chat</a></li>
-          <li><a id="navlink" href="#" style="color:white">account</a></li>
-          <li><a id="navlink" href="signout" style="color:white">sign out</a></li>
-      </div>
-    </nav>
-    <%= yield %>
+  <%= yield %>
   </body>
 </html>
