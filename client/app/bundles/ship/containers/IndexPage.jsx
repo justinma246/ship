@@ -32,8 +32,15 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="help" onMouseOver={()=>this.show('div1')} onMouseOut={()=>this.hide('div1')}>?</div>
-        <div id="div1">HELLO???</div>
+        <div className="help" onMouseOver={()=>this.show('div2')} onMouseOut={()=>this.hide('div2')}>?</div>
+        <div id="div2">
+          <h4>Ship Guide</h4>
+          <p>Ship is a dating app where you can "ship" others - making you the matchmaker.</p>
+          <p>You can either "sail" or "sink" the couple. Enough sails and they can connect! But too many sinks and they are stranded.</p>
+          <p>What's the incentive? Not only will you feel good about pairing up a happy couple, but you will also become an eligible bachelor or bachelorette as long as you stay active!</p>
+          <p>Don't forget to fill out your biography, interests, and threshold (how many reviews YOU think is necessary before pairing up)</p>
+          <p>What are you waiting for? Let's set sail!</p>
+        </div>
       </div>
     )
   }
