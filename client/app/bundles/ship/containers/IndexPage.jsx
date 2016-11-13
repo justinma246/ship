@@ -29,6 +29,9 @@ export default class IndexPage extends React.Component {
           <div>
             <a href="chat">CHAT</a>
           </div>
+          <div onClick={this.clicked}>
+            PRESS ME
+          </div>
           <a href="signout">Sign out</a>
         </div>
       </div>

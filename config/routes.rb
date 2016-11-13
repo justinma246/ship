@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  
+  get 'chat/conversations', to: 'chat#conversations'
+
   resources :sessions, only: [:create, :destroy]
   resources :home, only: [:login, :index]
 
