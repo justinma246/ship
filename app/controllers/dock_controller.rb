@@ -26,11 +26,23 @@ class DockController < ApplicationController
   	puts @index_props
   end
   def sail
-
+  	values = {
+  			user1_id: @index_props.user1.uid,
+  			user2_id: @index_props.user2.uid,
+  			pass: true,
+  	}
+  	Sail.create(values)
+  	puts values
   	puts "SAILED the ship"
   end
   def sink
-  	
+  	values = {
+  			user1_id: @index_props.user1.uid,
+  			user2_id: @index_props.user2.uid,
+  			pass: false,
+  	}
+  	Sail.create(values)
+  	puts values
   	puts "SUNK the ship"
   end
 end
