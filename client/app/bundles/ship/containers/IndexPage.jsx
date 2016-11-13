@@ -17,6 +17,7 @@ export default class IndexPage extends React.Component {
     let user = this.props.user
 
     return (
+
       <div className="wrapperThing">
         <div className="profile">
           <div>
