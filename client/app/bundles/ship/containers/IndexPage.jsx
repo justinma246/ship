@@ -5,6 +5,12 @@ export default class IndexPage extends React.Component {
   static propTypes = {
     user: React.PropTypes.object.isRequired,
   }
+  show(id) {
+    document.getElementById(id).style.visibility = "visible";
+  }
+  hide(id) {
+    document.getElementById(id).style.visibility = "hidden";
+  }
 
   render() {
     // INSERT LOGO HERE
@@ -18,6 +24,8 @@ export default class IndexPage extends React.Component {
           </div>
           <h1>Welcome to ship, {user.name}.</h1>
         </div>
+        <div className="help" onMouseOver={()=>this.show('div1')} onMouseOut={()=>this.hide('div1')}>?</div>
+        <div id="div1">HELLO???</div>
       </div>
     )
   }
