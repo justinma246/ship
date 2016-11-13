@@ -3,21 +3,21 @@
 		<div class="panel-heading">Edit Account Settings</div>
 		<div class="panel-body">
 			<%= form_for :user do |f| %>
-			  Biography:<br/>
+			  <span class="setting-label">Biography:</span><br/>
 			  <%= f.text_area :biography, :rows => 5, placeholder: @current_user.bio, class: 'account-input-text' %><br/>
-			  Age:<br/>
+			  <span class="setting-label">Age:</span><br/>
 			  <%= f.number_field :age, :rows => 1, :cols => 1, placeholder: @current_user.age.to_s, class: 'account-input-text' %><br/>
 			  <div class="row">
 			  	<div class="col-md-4" style="text-align:center">
-					  Gender:<br/> 
+					  <span class="setting-label">Gender:</span><br/> 
 					  <%= f.select :gender, [ 'Male', 'Female' ], :prompt => 'Select One', class: 'account-input-text'%>
 					</div>
 					<div class="col-md-4" style="text-align:center">
-					  Threshold:<br/> 
+					  <span class="setting-label">Threshold:</span><br/> 
 					  <%= f.select :threshold, [ '1', '2', '3', '4', '5' ], :prompt => 'Select One'%><br/>
 					</div>
 					<div class="col-md-4" style="text-align:center">
-					  Interests:<br/> 
+					  <span class="setting-label">Interest:</span><br/> 
 					  <%= f.select :from, [ 'Male', 'Female', 'Both' ], :prompt => 'Select One'%><br/>
 					</div>
 				</div>
