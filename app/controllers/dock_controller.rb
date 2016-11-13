@@ -17,31 +17,35 @@ class DockController < ApplicationController
 	  	while id2 == 0 || id2 == id1 || id2 == session[:user_id]
 	  		id2 = id.rand(User.all.length) + 1
 	  	end
-	  	{user1: User[id1], user2: User[id2]}
+	  	@index_props = {user1: User[id1], user2: User[id2]}
+	  	@@user1 = User[id1]
+	  	@@user2 = User[id2]
 	  end
   end
   def index
-  	@index_props = generate_pair
+  	generate_pair
   	puts "ODISAFIOASJDFIOAOJIDSF"
   	puts @index_props
   end
   def sail
   	values = {
-  			user1_id: @index_props.user1.uid,
-  			user2_id: @index_props.user2.uid,
-  			pass: true,
+  			user1_id: @@user1.uid,
+  			user2_id: @@user2.uid,
+  			judge_id: current_user.uid,
+  			pass_count: 1,
   	}
-  	Sail.create(values)
+  	Shipping.create(values)
   	puts values
   	puts "SAILED the ship"
   end
   def sink
   	values = {
-  			user1_id: @index_props.user1.uid,
-  			user2_id: @index_props.user2.uid,
-  			pass: false,
+  			user1_id: @@user1.uid,
+  			user2_id: @@user2.uid,
+  			judge_id: current_user.uid,
+  			pass_count: 0,
   	}
-  	Sail.create(values)
+  	Shipping.create(values)
   	puts values
   	puts "SUNK the ship"
   end
