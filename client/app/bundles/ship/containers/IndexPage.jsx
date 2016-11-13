@@ -1,5 +1,5 @@
 import React from 'react'
-
+import 'styles/HomeStyles.styl'
 
 export default class IndexPage extends React.Component {
   static propTypes = {
@@ -11,28 +11,24 @@ export default class IndexPage extends React.Component {
     let user = this.props.user
 
     return (
-      <div>
-        INDEX PAGE
+      <div className="wrapper">
         <div>
           <div>
-            Current User: {user.name}
+            <img id="profile-img" src={user.picture}/>
           </div>
-          <div>
-            <img src={user.picture}/>
+          <h1>Welcome to ship, {user.name}.</h1>
+          <div className="row navButtons">
+            <div className="col-md-4">
+              <a href="dock">DOCK</a>
+            </div>
+            <div className="col-md-4">
+              <a href="profile">EDIT PROFILE</a>
+            </div>
+            <div className="col-md-4">
+              <a href="chat">CHAT</a>
+            </div>
           </div>
-          <div>
-            <a href="dock">DOCK</a>
-          </div>
-          <div>
-            <a href="profile">EDIT PROFILE</a>
-          </div>
-          <div>
-            <a href="chat">CHAT</a>
-          </div>
-          <div onClick={this.clicked}>
-            PRESS ME
-          </div>
-          <a href="signout">Sign out</a>
+          <button className="btn btn-default"><a id="signOut" href="signout">Sign out</a></button>
         </div>
       </div>
     )

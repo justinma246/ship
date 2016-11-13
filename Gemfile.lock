@@ -92,7 +92,6 @@ GEM
       addressable
       faraday
       multi_json
-    libv8 (5.3.332.38.1)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -105,8 +104,6 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
-    mini_racer (0.1.7)
-      libv8 (~> 5.3)
     minitest (5.9.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
@@ -241,7 +238,6 @@ DEPENDENCIES
   jquery-rails
   koala (~> 2.2.0)
   listen (~> 3.0.5)
-  mini_racer
   omniauth-facebook (~> 1.4.0)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)

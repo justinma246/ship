@@ -6,6 +6,8 @@ class HomeController < ApplicationController
   end
 
   def login
+    puts "HELLO"
+    puts session[:user_id]
     redirect_to home_index_path if session[:user_id]
   end
 
@@ -15,6 +17,6 @@ class HomeController < ApplicationController
   end
 
   def profile
-
+    @profile_props = { user: current_user }
   end
 end
