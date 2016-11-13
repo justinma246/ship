@@ -21,7 +21,13 @@
 					  <%= f.select :from, [ 'Male', 'Female', 'Both' ], :prompt => 'Select One'%><br/>
 					</div>
 				</div>
-				<%= f.submit "Set Sail!", class: 'account-save-button btn btn-default' %>
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<%= f.submit "Set Sail!", class: 'account-save-button btn btn-default' %>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
 			<% end %>
 		</div>
 	</div>
