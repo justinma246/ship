@@ -74,7 +74,7 @@ export default class IndexPage extends React.Component {
           </div>
           <div className="col-md-6">
             <div className="panel panel-default">
-              <div className="panel-heading">Peopled You Shipped</div>
+              <div className="panel-heading">People You Shipped</div>
               <div className="panel-body">
                 {youVotedRows}
               </div>
