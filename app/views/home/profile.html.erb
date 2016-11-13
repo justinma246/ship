@@ -2,12 +2,12 @@
 	<div class="panel-heading">Edit Account Settings</div>
 	<div class="panel-body">
 		<%= form_for :user do |f| %>
-		  Gender:<br/> 
-		  <%= f.text_field :gender, placeholder: @current_user.gender, class: 'account-input-text'%><br/>
-		  Age:<br/>
-		  <%= f.text_field :age, placeholder: @current_user.age, class: 'account-input-text' %><br/>
 		  Biography:<br/>
 		  <%= f.text_field :biography, placeholder: @current_user.bio, class: 'account-input-text' %><br/>
+		  Age:<br/>
+		  <%= f.text_field :age, placeholder: @current_user.age, class: 'account-input-text' %><br/>
+		  Gender:<br/> 
+		  <%= f.select :gender, [ 'Male', 'Female' ], :prompt => 'Select One', class: 'account-input-text'%><br/>
 		  Interests : <%= f.select :from, [ 'Male', 'Female', 'Both' ], :prompt => 'Select One'%><br/>
 		  <%= f.submit "Set Sail!", class: 'account-save-button btn btn-default' %>
 		<% end %>
