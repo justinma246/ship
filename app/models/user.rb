@@ -38,13 +38,10 @@ class User < Sequel::Model
       user = User.create(values)
     end
     @facebook = user.facebook
-    puts "HELELLELEEOEOEOO"
-    puts @facebook
     
     values = {
       picture: @facebook.get_object("me?fields=picture.height(800)")["picture"]["data"]["url"]
     }
-    puts values[:picture]
     user.update(values)
     user
   end
