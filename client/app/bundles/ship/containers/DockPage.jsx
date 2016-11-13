@@ -1,5 +1,6 @@
 import React from 'react'
 import 'styles/DockStyles.styl'
+import 'styles/base.styl'
 
 class Sail_decision extends React.Component {
   render() {
@@ -33,23 +34,26 @@ export default class DockPage extends React.Component {
       <div className = "row">
         <div className = "col-md-5 user leftUser">
           <div className="dockpic" id="user1">
-            <h1>{user1.name}</h1>
+            
             <img src={user1.picture} width = "200" id = "profile-img"/>
-            <h2>Bio: {user1.bio}</h2>
+            <div className="blurb">
+              <h1 className="userToShip">{user1.name}</h1>
+              <h2 className="userInfo">Bio: {user1.bio}</h2>
+            </div>
           </div>
         </div>  
         <div className = "col-md-2">
           <div className = "decision">
-            <p>
-              <button className="btn btn-success" 
+            <p className ="buttonPar">
+              <button id="sailButton" className="btn" 
                 onClick = {()=> {$.ajax({url: "dock/sail",})}}>
-                Sail
+                Sail <span className="glyphicon glyphicon-hand-up"></span>
               </button>
             </p>
-            <p>
-              <button className="btn btn-danger" 
+            <p className ="buttonPar">
+              <button id="sinkButton" className="btn" 
                 onClick = {()=> {$.ajax({url: "dock/sink",})}}>
-                Sink
+                Sink <span className="glyphicon glyphicon-hand-down"></span>
               </button>
             </p>
             <p id = "test">
@@ -58,9 +62,11 @@ export default class DockPage extends React.Component {
         </div>
         <div className = "col-md-5 user rightUser">
           <div className="dockpic" id="user2">
-            <h1>{user2.name} </h1>
             <img src={user2.picture} width = "200" id = "profile-img"/>
-            <h2>Bio: {user2.bio}</h2>
+            <div className="blurb">
+              <h1 className="userToShip">{user2.name} </h1>
+              <h2 className="userInfo">Bio: {user2.bio}</h2>
+            </div>
           </div>
         </div>
       </div>
