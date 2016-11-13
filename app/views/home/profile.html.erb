@@ -3,15 +3,19 @@
 	<div class="panel-body">
 		<%= form_for :user do |f| %>
 		  Biography:<br/>
-		  <%= f.text_field :biography, placeholder: @current_user.bio, class: 'account-input-text' %><br/>
+		  <%= f.text_area :biography, :rows => 5, placeholder: @current_user.bio, class: 'account-input-text' %><br/>
 		  Age:<br/>
-		  <%= f.text_field :age, placeholder: @current_user.age, class: 'account-input-text' %><br/>
+		  <%= f.number_field :age, :rows => 1, :cols => 1, placeholder: @current_user.age.to_s, class: 'account-input-text' %><br/>
 		  <div class="row">
-		  	<div class="col-md-6" style="text-align:center">
+		  	<div class="col-md-4" style="text-align:center">
 				  Gender:<br/> 
 				  <%= f.select :gender, [ 'Male', 'Female' ], :prompt => 'Select One', class: 'account-input-text'%>
 				</div>
-				<div class="col-md-6" style="text-align:center">
+				<div class="col-md-4" style="text-align:center">
+				  Threshold:<br/> 
+				  <%= f.select :threshold, [ '1', '2', '3', '4', '5' ], :prompt => 'Select One'%><br/>
+				</div>
+				<div class="col-md-4" style="text-align:center">
 				  Interests:<br/> 
 				  <%= f.select :from, [ 'Male', 'Female', 'Both' ], :prompt => 'Select One'%><br/>
 				</div>

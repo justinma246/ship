@@ -24,6 +24,14 @@ export default class IndexPage extends React.Component {
           </div>
           <h1>Welcome to ship, {user.name}.</h1>
         </div>
+        <div className="feed">
+          <div className="panel panel-default">
+            <div className="panel-heading">Your Feed</div>
+            <div className="panel-body">
+              This is your feed
+            </div>
+          </div>
+        </div>
         <div className="help" onMouseOver={()=>this.show('div1')} onMouseOut={()=>this.hide('div1')}>?</div>
         <div id="div1">HELLO???</div>
       </div>
