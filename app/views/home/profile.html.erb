@@ -6,10 +6,17 @@
 		  <%= f.text_field :biography, placeholder: @current_user.bio, class: 'account-input-text' %><br/>
 		  Age:<br/>
 		  <%= f.text_field :age, placeholder: @current_user.age, class: 'account-input-text' %><br/>
-		  Gender:<br/> 
-		  <%= f.select :gender, [ 'Male', 'Female' ], :prompt => 'Select One', class: 'account-input-text'%><br/>
-		  Interests : <%= f.select :from, [ 'Male', 'Female', 'Both' ], :prompt => 'Select One'%><br/>
-		  <%= f.submit "Set Sail!", class: 'account-save-button btn btn-default' %>
+		  <div class="row">
+		  	<div class="col-md-6" style="text-align:center">
+				  Gender:<br/> 
+				  <%= f.select :gender, [ 'Male', 'Female' ], :prompt => 'Select One', class: 'account-input-text'%>
+				</div>
+				<div class="col-md-6" style="text-align:center">
+				  Interests:<br/> 
+				  <%= f.select :from, [ 'Male', 'Female', 'Both' ], :prompt => 'Select One'%><br/>
+				</div>
+			</div>
+			<%= f.submit "Set Sail!", class: 'account-save-button btn btn-default' %>
 		<% end %>
 	</div>
 </div>
