@@ -32,7 +32,7 @@ export default class DockPage extends React.Component {
   let user2 = this.props.user2
     return (
       <div className = "row">
-        <div className = "col-md-5 user leftUser">
+        <div className = "col-md-6 user leftUser">
           <div className="dockpic" id="user1">
             
             <img src={user1.picture} width = "200" id = "profile-img"/>
@@ -47,7 +47,7 @@ export default class DockPage extends React.Component {
             <p className ="buttonPar">
               <button id="sailButton" className="btn" 
                 onClick = {()=> {$.ajax({url: "dock/sail",})}}>
-                Sail <span className="glyphicon glyphicon-hand-up"></span>
+                Ship <span className="glyphicon glyphicon-hand-up"></span>
               </button>
             </p>
             <p className ="buttonPar">
@@ -56,11 +56,9 @@ export default class DockPage extends React.Component {
                 Sink <span className="glyphicon glyphicon-hand-down"></span>
               </button>
             </p>
-            <p id = "test">
-            </p>
           </div>
         </div>
-        <div className = "col-md-5 user rightUser">
+        <div className = "col-md-6 user rightUser">
           <div className="dockpic" id="user2">
             <img src={user2.picture} width = "200" id = "profile-img"/>
             <div className="blurb">
