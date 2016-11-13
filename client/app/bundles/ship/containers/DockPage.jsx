@@ -4,7 +4,7 @@ import 'styles/DockStyles.styl'
 class Sail_decision extends React.Component {
   render() {
     return (
-      <button>
+      <button className="btn btn-success">
         Sail
       </button>
     );
@@ -13,20 +13,10 @@ class Sail_decision extends React.Component {
 class Sink_decision extends React.Component{
   render() {
     return (
-      <button>
+      <button className="btn btn-danger">
         Sink
       </button>
     );
-  }
-}
-class Decision extends React.Component {
-  render() {
-    return (
-      <div className = 'decision'>
-        <Sail_decision />
-        <Sink_decision />
-      </div>
-    )
   }
 }
 export default class DockPage extends React.Component {
@@ -37,16 +27,30 @@ export default class DockPage extends React.Component {
   render() {
     let user = this.props.user
     return (
-      <div>
-        <h1>dock hello</h1>
-        <Decision />
-        <div class="profile" id="user1">
-          <h1> USERNAME: {user.name} </h1>
-          <img src={user.picture}/>
+      <div className = "row">
+        <div className = "col-md-5">
+          <div className="profile" id="user1">
+            <h1>{user.name}</h1>
+            <img src={user.picture} width = "200" id = "profile-img"/>
+            <h2>INFO HERE</h2>
+          </div>
+        </div>  
+        <div className = "col-md-2">
+          <div className = "decision">
+            <p>
+            <Sail_decision />
+            </p>
+            <p>
+            <Sink_decision />
+            </p>
+          </div>
         </div>
-        <div class="profile" id="user2">
-          <h1> USERNAME: {user.name} </h1>
-          <img src={user.picture}/>
+        <div className = "col-md-5">
+          <div className="profile" id="user2">
+            <h1>{user.name} </h1>
+            <img src={user.picture} width = "200" id = "profile-img"/>
+            <h2>INFO HERE</h2>
+          </div>
         </div>
       </div>
     )
