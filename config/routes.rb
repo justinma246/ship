@@ -12,6 +12,5 @@ Rails.application.routes.draw do
   get 'profile', to: 'home#profile'
   post 'profile', to: 'home#profilePost'
   get 'chat', to: 'chat#index'
-  get 'dock/sail', to: 'dock#sail'
-  get 'dock/sink', to: 'dock#sink'
+  post 'dock/decision', to: 'dock#decision'
 end
