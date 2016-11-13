@@ -1,0 +1,47 @@
+# MODELS / CONTROLLERS
+
+User Model:
+ - id:integer
+ - provider:string
+ - uid:integer
+ - name:string
+ - oauth_token:string
+ - oauth_expires_at:DateTime
+ - age:integer
+ - gender:string
+ - interested_in:string (male or female)
+ - bio:string (describing self)
+ - ships:integer (number of successful ships)
+ - last_active:DateTime
+
+User Controller: (profile page?)
+ - has 3 buttons -> start shipping, profile, chat
+ - leads to profile page
+
+Chat Controller:
+ - redirected when clicking chat
+ - shows facebook messenger style chat
+
+Shipping Model:
+ - user1_id:integer (use uid of user model to get all information
+ - user2_id:integer  necessary for both parties)
+ - judge_id:integer (current user)
+ - pass_count:integer (count used to compare to threshhold)
+
+Shipping Controller: (displays the ship page)
+ - method that gets all information of both people and judge?
+ - method that increments pass_count on click of button (or in erb file)
+ - VIEW that displays both profiles + buttons (pass / fail)
+    -> possible success screen so the shipper can know if his ship resulted in a successful ship
+
+Sail Model:
+ - user1_id:integer
+ - user2_id:integer
+ - pass:boolean
+
+# VIEWS
+ - Landing Page => root :: views/home/login.html.erb
+ - Home Page => /home#_=_ :: views/home/index.html.erb
+ - Dock => /dock :: views/dock/index.html.erb
+ - Profile => /profile :: views/home/profile.html.erb
+ - Chat => /chat :: views/chat/index.html.erb
