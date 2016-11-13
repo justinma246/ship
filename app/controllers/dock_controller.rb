@@ -8,24 +8,29 @@ class DockController < ApplicationController
   	id = Random.new(Random.new_seed)
   	id1 = 0;
   	id2 = 0;
-  	while id1 == 0 || id1 == session[:user_id]
-  		id1 = id.rand(User.all.length) + 1
-  	end
-  	while id2 == 0 || id2 == id1 || id2 == session[:user_id]
-  		id2 = id.rand(User.all.length) + 1
-  	end
-  	{user1: User[id1], user2: User[id2]}
+  	if User.all.length < 3
+  		{user1: current_user, user2: current_user}
+  	else
+	  	while id1 == 0 || id1 == session[:user_id]
+	  		id1 = id.rand(User.all.length) + 1
+	  	end
+	  	while id2 == 0 || id2 == id1 || id2 == session[:user_id]
+	  		id2 = id.rand(User.all.length) + 1
+	  	end
+	  	{user1: User[id1], user2: User[id2]}
+	  end
   end
   def index
   	@index_props = generate_pair
+  	puts "ODISAFIOASJDFIOAOJIDSF"
   	puts @index_props
   end
   def sail
-  	@index_props = generate_pair
+
   	puts "SAILED the ship"
   end
   def sink
-  	@index_props = generate_pair
+  	
   	puts "SUNK the ship"
   end
 end
