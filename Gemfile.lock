@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/igrigorik/em-synchrony.git
-  revision: 8554ced1a8ff82852347a0c1407886e2a66935ae
-  specs:
-    em-synchrony (1.0.5)
-      eventmachine (>= 1.0.0.beta.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,7 +57,6 @@ GEM
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
     erubis (2.7.0)
-    eventmachine (1.2.0.1)
     execjs (2.7.0)
     faraday (0.10.0)
       multipart-post (>= 1.2, < 3)
@@ -212,7 +204,6 @@ DEPENDENCIES
   annotate-sequel
   byebug
   coffee-rails (~> 4.2)
-  em-synchrony!
   jbuilder (~> 2.5)
   jquery-rails
   koala (~> 2.2.0)
