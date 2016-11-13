@@ -55,7 +55,7 @@ export default class IndexPage extends React.Component {
     }
 
     return (
-
+      <div className="backgradient">
       <div className="wrapperThing">
         <div className="profile">
           <div>
@@ -90,6 +90,7 @@ export default class IndexPage extends React.Component {
           <p>Don't forget to fill out your biography, interests, and threshold (how many reviews YOU think is necessary before pairing up)</p>
           <p>What are you waiting for? Let's set sail!</p>
         </div>
+      </div>
       </div>
     )
   }
