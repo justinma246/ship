@@ -1,1 +1,5 @@
-<%= react_component("ProfilePage", props: @profile_props, prerender: false) %>
+<%= form_for :user do |f| %>
+  Biography: <%= f.text_field :biography %><br />
+  Interests : <%= f.select :from, [ 'Men', 'Women', 'Both' ], :prompt => 'Select One' %><br />
+  <%= f.submit "Set Sail!" %>
+<% end %>

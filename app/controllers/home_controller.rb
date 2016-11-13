@@ -17,6 +17,17 @@ class HomeController < ApplicationController
   end
 
   def profile
-    @profile_props = { user: current_user }
+    puts "get profile stuff"
   end
+
+  def profilePost
+    #redirect_to profile_path
+    values = {
+      bio: params["user"]["biography"],
+      interested_in: params["user"]["from"]        
+    }
+    current_user.update(values)
+    redirect_to profile_path
+  end
+
 end
