@@ -17,6 +17,8 @@ Get shipping!
 
 # DEV STUFF
 
+Install Ruby 2.3+, Rails 5, Node.js
+
 Run `bundle install && npm install`
 
 To run the server: `foreman start -f Procfile.dev`
