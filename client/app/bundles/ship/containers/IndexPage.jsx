@@ -15,6 +15,44 @@ export default class IndexPage extends React.Component {
   render() {
     // INSERT LOGO HERE
     let user = this.props.user
+    let you_voted = this.props.you_voted
+    let voted_you = this.props.voted_you
+    let youVotedRows = []
+    let votedYouRows = []
+    for (var i = 0; i < you_voted.length; i++) {
+      youVotedRows.push(
+         <div className = "shipRow">
+            <b>{you_voted[i]["voteCount"]} ships for</b>
+            <div className="row">
+              <div className="shipEntry col-md-6">
+                <img className="shipImage" src={you_voted[i]["user1"].picture}/>
+                {you_voted[i]["user1"].name}
+              </div>
+              <div className="shipEntry col-md-6">
+                <img className="shipImage" src={you_voted[i]["user2"].picture}/>
+                {you_voted[i]["user2"].name}
+              </div>
+              <br/>
+            </div>
+          </div>)
+    }
+    for (var i = 0; i < voted_you.length; i++) {
+      votedYouRows.push(
+          <div className = "shipRow">
+            <b>{voted_you[i]["voteCount"]} ships for</b>
+            <div className="row">
+              <div className="shipEntry col-md-6">
+                <img className="shipImage" src={voted_you[i]["user1"].picture}/>
+                {voted_you[i]["user1"].name}
+              </div>
+              <div className="shipEntry col-md-6">
+                <img className="shipImage" src={voted_you[i]["user2"].picture}/>
+                {voted_you[i]["user2"].name}
+              </div>
+              <br/>
+            </div>
+          </div>)
+    }
 
     return (
       <div className="wrapperThing">
@@ -24,11 +62,21 @@ export default class IndexPage extends React.Component {
           </div>
           <h1>Welcome to ship, {user.name}.</h1>
         </div>
-        <div className="feed">
-          <div className="panel panel-default">
-            <div className="panel-heading">Your Feed</div>
-            <div className="panel-body">
-              This is your feed
+        <div className="feed row">
+          <div className="col-md-6">
+            <div className="panel panel-default">
+              <div className="panel-heading">Ships Involving You</div>
+              <div className="panel-body">
+                {votedYouRows}
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="panel panel-default">
+              <div className="panel-heading">Peopled You Shipped</div>
+              <div className="panel-body">
+                {youVotedRows}
+              </div>
             </div>
           </div>
         </div>
