@@ -55,6 +55,7 @@ export default class IndexPage extends React.Component {
     }
 
     return (
+
       <div className="wrapperThing">
         <div className="profile">
           <div>
