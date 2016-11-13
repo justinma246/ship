@@ -35,7 +35,8 @@ export default class DockPage extends React.Component {
         <img src={user.picture} width = "200" id = "profile-img"/>
         <div className="blurb">
           <h1 className="userToShip">{user.name}</h1>
-          <h2 className="userInfo">Bio: {user.bio}</h2>
+          <h3 className="ageInfo">{user.gender.slice(0,1)}, {user.age} </h3>
+          <h2 className="userInfo">{user.bio}</h2>
         </div>
       </div>
     )
@@ -46,28 +47,26 @@ export default class DockPage extends React.Component {
 
     return (
       <div className = "row">
-        <div className = "col-md-5 user leftUser">
+        <div className = "col-md-6 user leftUser">
           {this.formatUser(user1)}
         </div>
-        <div className = "col-md-2">
-          <div className = "decision">
-            <p className ="buttonPar">
-              <button id="sailButton" className="btn"
-                      onClick = {() => this.handleDecision(1)}>
-                Sail <span className="glyphicon glyphicon-hand-up"></span>
-              </button>
-            </p>
-            <p className ="buttonPar">
-              <button id="sinkButton" className="btn"
-                      onClick = {() => this.handleDecision(0)}>
-                Sink <span className="glyphicon glyphicon-hand-down"></span>
-              </button>
-            </p>
-            <p id = "test">
-            </p>
-          </div>
+
+        <div className = "decision">
+          <p className ="buttonPar">
+            <button id="sailButton" className="btn"
+                    onClick = {() => this.handleDecision(1)}>
+              Sail <span className="glyphicon glyphicon-hand-up"></span>
+            </button>
+          </p>
+          <p className ="buttonPar">
+            <button id="sinkButton" className="btn"
+                    onClick = {() => this.handleDecision(0)}>
+              Sink <span className="glyphicon glyphicon-hand-down"></span>
+            </button>
+          </p>
         </div>
-        <div className = "col-md-5 user rightUser">
+        
+        <div className = "col-md-6 user rightUser">
           {this.formatUser(user2)}
         </div>
       </div>
