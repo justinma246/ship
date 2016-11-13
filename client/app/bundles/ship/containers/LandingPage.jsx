@@ -1,7 +1,5 @@
 import React from 'react'
 
-
-import 'styles/base.styl'
 import 'styles/LandingPage.styl'
 
 export default class LandingPage extends React.Component {
