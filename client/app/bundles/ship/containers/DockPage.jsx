@@ -35,7 +35,8 @@ export default class DockPage extends React.Component {
         <img src={user.picture} width = "200" id = "profile-img"/>
         <div className="blurb">
           <h1 className="userToShip">{user.name}</h1>
-          <h2 className="userInfo">Bio: {user.bio}</h2>
+          <h3 className="ageInfo">{user.gender.slice(0,1)}, {user.age} </h3>
+          <h2 className="userInfo">{user.bio}</h2>
         </div>
       </div>
     )
