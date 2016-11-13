@@ -17,13 +17,13 @@ class DockController < ApplicationController
 	  	while id2 == 0 || id2 == id1 || id2 == session[:user_id]
 	  		id2 = id.rand(User.all.length) + 1
 	  	end
-	  	@index_props = {user1: User[id1], user2: User[id2]}
 	  	@@user1 = User[id1]
 	  	@@user2 = User[id2]
+	  	{user1: User[id1], user2: User[id2]}
 	  end
   end
   def index
-  	generate_pair
+  	@index_props = generate_pair
   	puts "ODISAFIOASJDFIOAOJIDSF"
   	puts @index_props
   end
