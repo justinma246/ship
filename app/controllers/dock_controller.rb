@@ -5,7 +5,6 @@ class DockController < ApplicationController
   end
   def index
   	@index_props = { user: current_user }
-  	puts "OIASDOIFHAIOSDFHIOASDHOIFHIOASHODIFAS"
   	puts @index_props
   end
 end
