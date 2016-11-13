@@ -17,11 +17,14 @@ class HomeController < ApplicationController
   end
 
   def profile
+    @current_user = current_user
   end
 
   def profilePost
     #redirect_to profile_path
     values = {
+      gender: params["user"]["gender"],
+      age: params["user"]["age"],
       bio: params["user"]["biography"],
       interested_in: params["user"]["from"]        
     }

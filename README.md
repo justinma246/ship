@@ -3,7 +3,7 @@
 Welcome 
 
 # GENERAL
-Ship is a dating app where you can "ship" 2 other people based on their presented profile. Connected to social media (Facebook), you can judge matchmake others based on their pictures, basic information, interests, and more!  
+Ship is a dating app where you can "ship" 2 other people based on their presented profile. Connected to social media (Facebook), you can matchmake others based on their pictures, basic information, interests, and more!  
 
 For each scenario, the shipper will be given the option to either ship or pass on the coupling. Being active in shipping others places the shipper into the pool of bachelor and bachelorette's (if wanted). 
 
