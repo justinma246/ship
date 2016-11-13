@@ -23,9 +23,10 @@ class HomeController < ApplicationController
   def profilePost
     #redirect_to profile_path
     values = {
+      bio: params["user"]["biography"],
       gender: params["user"]["gender"],
       age: params["user"]["age"],
-      bio: params["user"]["biography"],
+      threshold: params["user"]["threshold"],
       interested_in: params["user"]["from"]        
     }
     current_user.update(values)

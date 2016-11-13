@@ -35,6 +35,7 @@ Sequel.migration do
       column :ships, "integer"
       column :last_active, "timestamp"
       column :picture, "varchar(255)"
+      column :threshold, "integer"
     end
   end
 end
@@ -46,5 +47,6 @@ self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112105001_cr
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112105343_add_last_access_to_users.rb')"
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112110716_create_sails.rb')"
 self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161112190703_add_picture_to_users.rb')"
+self << "INSERT INTO `schema_migrations` (`filename`) VALUES ('20161113041826_add_threshold_to_users.rb')"
                 end
               end
