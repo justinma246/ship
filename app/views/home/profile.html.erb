@@ -1,7 +1,7 @@
 <%= form_for :user do |f| %>
-  Gender: <%= f.text_field :gender, placeholder: 'male' %>
-  Age: <%= f.text_field :age %>
-  Biography: <%= f.text_field :biography %><br />
+  Gender: <%= f.text_field :gender, placeholder: @current_user.gender %>
+  Age: <%= f.text_field :age, placeholder: @current_user.age %>
+  Biography: <%= f.text_field :biography, placeholder: @current_user.bio %><br />
   Interests : <%= f.select :from, [ 'Male', 'Female', 'Both' ], :prompt => 'Select One' %><br />
   <%= f.submit "Set Sail!" %>
 <% end %>

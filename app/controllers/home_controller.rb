@@ -17,6 +17,7 @@ class HomeController < ApplicationController
   end
 
   def profile
+    @current_user = current_user
   end
 
   def profilePost
