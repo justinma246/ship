@@ -39,7 +39,7 @@ class User < Sequel::Model
       user = User.create(values)
     end
     @facebook = user.facebook
-    
+
     values = {
       picture: @facebook.get_object("me?fields=picture.height(800)")["picture"]["data"]["url"]
     }
@@ -49,5 +49,43 @@ class User < Sequel::Model
 
   def facebook
     @facebook = Koala::Facebook::API.new(oauth_token)
+  end
+
+  def count_ships(pair)
+    Shipping.where(:user1_id=>pair.user1_id, :user2_id=>pair.user2_id, :pass_count=>1).count
+  end
+
+  def shipped_with
+    sailed = []
+    voted_you = Shipping
+      .where(:user1_id => uid)
+      .all + Shipping.where(:user2_id => uid).all
+    voted_you.each do |ship|
+      count = count_ships(ship)
+      if count >= 2
+        sailed.push(
+          user1: User.where(:uid=>ship.user1_id).first,
+          user2: User.where(:uid=>ship.user2_id).first,
+          voteCount: count,
+        )
+      end
+    end
+    sailed.uniq
+  end
+
+  def my_ships
+    you_voted = Shipping.where(:judge_id => uid).all
+    sailed = []
+    you_voted.each do |ship|
+      count = count_ships(ship)
+      if count >= 2
+        sailed.push(
+          user1: User.where(:uid=>ship.user1_id).first,
+          user2: User.where(:uid=>ship.user2_id).first,
+          voteCount: count,
+        )
+      end
+    end
+    sailed
   end
 end

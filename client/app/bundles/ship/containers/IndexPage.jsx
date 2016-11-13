@@ -4,21 +4,24 @@ import 'styles/HomeStyles.styl'
 export default class IndexPage extends React.Component {
   static propTypes = {
     user: React.PropTypes.object.isRequired,
+    you_voted: React.PropTypes.array,
+    voted_you: React.PropTypes.array,
   }
+
   show(id) {
     document.getElementById(id).style.visibility = "visible";
   }
+
   hide(id) {
     document.getElementById(id).style.visibility = "hidden";
   }
 
   render() {
     // INSERT LOGO HERE
-    let user = this.props.user
-    let you_voted = this.props.you_voted
-    let voted_you = this.props.voted_you
+    let { user, you_voted, voted_you } = this.props
     let youVotedRows = []
     let votedYouRows = []
+
     for (var i = 0; i < you_voted.length; i++) {
       youVotedRows.push(
          <div className = "shipRow">

@@ -8,34 +8,35 @@ import 'styles/Chat.styl'
 export default class ChatPage extends React.Component {
   static propTypes = {
     user: React.PropTypes.object.isRequired,
+    conversations: React.PropTypes.array,
   }
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.cable = ActionCable.createConsumer()
+    this.initializeConversations(props.conversations)
 
     this.state = {
-      conversations: [],
+      conversations: props.conversations,
       current: null,
     }
   }
 
   componentDidMount() {
-    $.ajax({
-      url: "chat/conversations",
-      success: this.initializeConversations,
-      error: (self, status, error) => {
-        console.log("Error retrieving conversations:")
-        console.log(status)
-        console.log(error)
-      },
-    })
+      /* $.ajax({
+       *   url: "chat/conversations",
+       *   success: this.initializeConversations,
+       *   error: (self, status, error) => {
+       *     console.log("Error retrieving conversations:")
+       *     console.log(status)
+       *     console.log(error)
+       *   },
+       * })*/
   }
 
   initializeConversations = conversations => {
     let user = this.props.user
-    // let dispatcher = this.dispatcher
 
     conversations.forEach(conversation => {
       let first = Math.min(user.id, conversation.user.id)
@@ -57,7 +58,6 @@ export default class ChatPage extends React.Component {
       conversation.messages = conversation.messages || []
       conversation.room = room
     })
-    this.setState({ conversations })
   }
 
   submitMessage = () => {
