@@ -24,6 +24,7 @@ const config = {
       react: path.resolve('./node_modules/react'),
       'react-dom': path.resolve('./node_modules/react-dom'),
       jquery: path.resolve('./node_modules/jquery'),
+      classnames: path.resolve('./node_modules/classnames'),
     },
   },
   plugins: [

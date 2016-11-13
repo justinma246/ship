@@ -6,6 +6,12 @@ class ChatController < ApplicationController
   end
 
   def conversations
-    render json: ['HELLO', session[:user_id]]
+    data = []
+    User.each do |user|
+      data << {
+        user: user,
+      }
+    end
+    render json: data
   end
 end

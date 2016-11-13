@@ -1,0 +1,105 @@
+smoke = #CCCCCC
+ship-blue = #0092BC
+sky-blue = #D3F5F5
+light-blue = #E8FAFA
+
+html body
+  height: 100vh
+  display: flex
+  flex-flow: column
+
+.conversations-container
+  flex: 1 1 auto
+  display: flex
+  flex-flow: column
+  background-color: WHITE
+
+.conversations
+  display: flex
+  flex-flow: row
+  flex: 1 1 auto
+
+.conversation
+  flex: 1 1 auto
+  display: flex
+  flex-flow: column
+
+.conversation-list
+  flex: 0 1 auto
+  border-right: 1px SOLID smoke
+  background-color: #EEEEEE
+
+.conversation-button
+  background-color: WHITE
+  border-bottom: 1px SOLID smoke
+  cursor: pointer
+
+  &:hover, &.current
+    background-color: light-blue
+
+.conversation-pic
+  width: 100px
+  height: @width
+  border-radius: 50px
+  padding: 15px
+
+.no-conversation
+  flex: 1 1 auto
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 25px
+  color: #777777
+
+.messages
+  flex: 1 1 auto
+  overflow: auto
+
+  .message
+    margin: 4px 10px
+    display: flex
+
+    &.right
+      justify-content: flex-end
+
+      .content
+        background-color: light-blue
+
+    &.left
+      justify-content: flex-start
+
+      .content
+        background-color: light-blue
+
+    .content
+      border-radius: 5px
+      padding: 10px
+      max-width: 65%
+      word-wrap: break-word
+
+.message-writer
+  display: flex
+  flex-flow: row
+
+  .input
+    flex: 1 1 auto
+    border-radius: 3px
+    border: 1px solid ship-blue
+    margin: 10px
+    padding: 0px 10px
+
+  .send
+    flex: 0 1 auto
+    padding: 10px 25px
+    margin: 10px
+    margin-left: 0px
+    border: 1px solid ship-blue
+    border-radius: 3px
+    color: ship-blue
+    cursor: pointer
+
+    &:hover
+      background-color: #E4F5F5
+
+    &:active
+      background-color: sky-blue
