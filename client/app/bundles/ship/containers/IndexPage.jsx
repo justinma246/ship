@@ -61,7 +61,7 @@ export default class IndexPage extends React.Component {
           <div>
             <img id="profile-img" src={user.picture}/>
           </div>
-          <h1>Welcome to ship, {user.name}.</h1>
+          <h1 >Welcome to <b>ship</b>, {user.name}.</h1>
         </div>
         <div className="feed row">
           <div className="col-md-6">

@@ -14,7 +14,7 @@ export default class LandingPage extends React.Component {
   render() {
     return (
       <div className="page">
-        <div className="ship">ship</div>
+        <div className="ship">ship.</div>
         <div className="signUp">
         <img className="logo" src='assets/ship-white-trans.png'/>
           <a className="button" href="/auth/facebook">Sign in with Facebook</a>
