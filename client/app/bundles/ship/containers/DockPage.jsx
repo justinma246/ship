@@ -47,26 +47,26 @@ export default class DockPage extends React.Component {
 
     return (
       <div className = "row">
-        <div className = "col-md-5 user leftUser">
+        <div className = "col-md-6 user leftUser">
           {this.formatUser(user1)}
         </div>
-        <div className = "col-md-2">
-          <div className = "decision">
-            <p className ="buttonPar">
-              <button id="sailButton" className="btn"
-                      onClick = {() => this.handleDecision(1)}>
-                Sail <span className="glyphicon glyphicon-hand-up"></span>
-              </button>
-            </p>
-            <p className ="buttonPar">
-              <button id="sinkButton" className="btn"
-                      onClick = {() => this.handleDecision(0)}>
-                Sink <span className="glyphicon glyphicon-hand-down"></span>
-              </button>
-            </p>
-          </div>
+
+        <div className = "decision">
+          <p className ="buttonPar">
+            <button id="sailButton" className="btn"
+                    onClick = {() => this.handleDecision(1)}>
+              Sail <span className="glyphicon glyphicon-hand-up"></span>
+            </button>
+          </p>
+          <p className ="buttonPar">
+            <button id="sinkButton" className="btn"
+                    onClick = {() => this.handleDecision(0)}>
+              Sink <span className="glyphicon glyphicon-hand-down"></span>
+            </button>
+          </p>
         </div>
-        <div className = "col-md-5 user rightUser">
+        
+        <div className = "col-md-6 user rightUser">
           {this.formatUser(user2)}
         </div>
       </div>
